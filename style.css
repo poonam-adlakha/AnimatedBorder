@@ -1,0 +1,45 @@
+:root {
+    --background: #100d11;
+}
+
+body {
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: system-ui;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    color: aliceblue;
+    text-transform: uppercase;
+}
+.gradient {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8em;
+    height: 8em;
+    background: #100d11;
+    border-radius: 10%;
+    text-align: center;
+}
+
+.gradient::after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(45deg, #090674, 
+      #c2192d, #35c219);
+    inset: -5%;
+    border-radius: 15%;
+    z-index: -1;
+    animation: move 1s linear infinite;
+}
+
+@keyframes move {
+  to {
+    background: linear-gradient(105deg, #090674, 
+      #c2192d, #35c219);
+  }
+}
